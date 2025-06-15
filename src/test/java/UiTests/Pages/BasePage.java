@@ -21,7 +21,7 @@ public class BasePage {
     protected WebDriverWait wait;
     protected TestContext context;
 
-    public BasePage(TestContext context) {
+    public BasePage(TestContext context)  {
         this.context = context;
         this.driver = context.driver;
         this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(30));
