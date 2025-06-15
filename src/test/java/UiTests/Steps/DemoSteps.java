@@ -4,8 +4,15 @@ import io.cucumber.java.en.When;
 
 public class DemoSteps {
 
+    private final TestContext context;
+
+    public DemoSteps(TestContext context) {
+        this.context = context;
+    }
+
+
     @When("User opens browser")
     public void userOpensBrowser() {
-        System.out.println("Blank page opens ...");
+        context.pm.getDemoPage().openBrowser();
     }
 }
