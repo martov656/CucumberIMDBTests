@@ -14,6 +14,8 @@ Feature: IMDb celebrity search with multiple names
       | Karen Black        |
       | Chuck Norris       |
       | Michael Dudikoff   |
+      | David Bowie        |
+      | Alan Alda          |
 
     Then the browser is closed
 
