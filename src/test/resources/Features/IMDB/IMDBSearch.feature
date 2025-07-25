@@ -23,7 +23,7 @@ Feature: IMDb celebrity search with multiple names
   Scenario: User searches for multiple movies on IMDb
     Given user opens movie database home page
     When user is searching for the following movies:
-      | Dr. No             |
+      | Goldfinger          |
       | Gravitace          |
       | Match Point        |
       | Šílený Max 2: Bojovník silnic|
@@ -54,16 +54,16 @@ Feature: IMDb celebrity search with multiple names
     Then imdb browser is closed
 
   @multiple4
-  Scenario: User searches for multiple Reese movies on IMDb
+  Scenario: User searches for multiple Sandra Bullock movies on IMDb
     Given user opens movie database home page
     When user is searching for the following movies:
-      |Poznáš, až to přijde?|
-      |Voda pro slony|
-      |The Morning Show|
-      |Tohle je válka!|
-      |Který je ten pravý?|
-      |Sedmilhářky|
-      |Jarmark marnosti|
-      |Sedmilhářky|
+      |Návrh|
+      |Ztracené město|
+      |Nebezpečná rychlost|
+      |Magická posedlost|
+      |Predtucha|
+      |Demolition Man|
+      |Živelná pohroma|
+      |Dům u jezera|
 
     Then imdb browser is closed

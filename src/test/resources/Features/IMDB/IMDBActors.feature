@@ -24,3 +24,11 @@ Feature: IMDb celebrity search
     And the page should contain "Victoria Silvstedt"
     And imdb browser is over
 
+  @jennifer
+  Scenario: User searches for Jennifer Aniston
+    Given user open imdb and put keyword
+    When the user enters "Jennifer Aniston" into the search field and presses Enter
+    Then the user should see a link to "Jennifer Aniston"
+    And the page should contain "Jennifer Aniston"
+    And imdb browser is over
+

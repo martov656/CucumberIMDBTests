@@ -20,12 +20,28 @@ public class IMDBSearchSteps {
     private WebDriver driver;
     private WebDriverWait wait;
 
+    public void acceptCookiesIfVisible() {
+        try {
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebElement acceptCookies = shortWait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[contains(text(),'Accept') or contains(text(),'Souhlasím') or contains(text(),'Rozumím')]")
+            ));
+            acceptCookies.click();
+            System.out.println("Cookies byly akceptovány.");
+        } catch (TimeoutException e) {
+            System.out.println("Cookies banner se nezobrazil nebo už byl potvrzen.");
+        }
+    }
+
+
     @Given("the user opens the IMDb homepage")
     public void openIMDbHomepage() {
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.manage().window().maximize();
         driver.get("https://www.imdb.com/");
+
+        acceptCookiesIfVisible();
     }
 
     @When("the user searches for the following celebrities:")

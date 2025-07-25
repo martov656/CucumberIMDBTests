@@ -82,6 +82,8 @@ public class IMDBSearchMovieSteps {
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", trailerLink);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", trailerLink);
+
+
     }
 
     @Then("imdb browser is closed")
