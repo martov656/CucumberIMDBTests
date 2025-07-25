@@ -1,31 +1,17 @@
-Feature: IMDb celebrity search with multiple names
+Feature: IMDb celebrity search with multiple movies
+
 
   @multiple
-  Scenario: User searches for multiple celebrities on IMDb
-    Given the user opens the IMDb homepage
-    When the user searches for the following celebrities:
-      | Reese Witherspoon  |
-      | Sandra Bullock     |
-      | Scarlett Johansson |
-      | Tom Cruise         |
-      | Brad Pitt          |
-      | Ridley Scott       |
-      | Steven Spielberg   |
-      | Karen Black        |
-      | Chuck Norris       |
-      | Michael Dudikoff   |
-      | David Bowie        |
-      | Alan Alda          |
-
-    Then the browser is closed
-
-  @multiple2
   Scenario: User searches for multiple movies on IMDb
     Given user opens movie database home page
     When user is searching for the following movies:
+      | Dr. No          |
       | Goldfinger          |
+      | Vetřelec          |
+      | Vetřelci          |
       | Gravitace          |
-      | Match Point        |
+      |Ztracené město Z|
+      | Match Point - Hra osudu|
       | Šílený Max 2: Bojovník silnic|
       | Sedm               |
       |Expendables: Postradatelní 2|
@@ -37,23 +23,25 @@ Feature: IMDb celebrity search with multiple names
 
     Then imdb browser is closed
 
-  @multiple3
+  @multiple
   Scenario: User searches for multiple Reese Witherspoon movies on IMDb
     Given user opens movie database home page
     When user is searching for the following movies:
-      | Pravá blondýnka    |
+      |Pravá blondýnka    |
+      |Pravá blondýnka 2  |
       |Poznáš, až to přijde?|
       |Voda pro slony|
       |The Morning Show|
       |Tohle je válka!|
       |Který je ten pravý?|
-      |Sedmilhářky|
+      |Milenec nebo vrah|
       |Jarmark marnosti|
       |Sedmilhářky|
+      |Sami v pousti|
 
     Then imdb browser is closed
 
-  @multiple4
+  @multiple
   Scenario: User searches for multiple Sandra Bullock movies on IMDb
     Given user opens movie database home page
     When user is searching for the following movies:

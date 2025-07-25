@@ -49,30 +49,37 @@ public class IMDBSearchMovieSteps {
         for (String movie : movies) {
             System.out.println("Searching for: " + movie);
 
-            // Vyhledání pole a zadání jména
             WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(By.name("q")));
             searchBox.clear();
             searchBox.sendKeys(movie);
             searchBox.sendKeys(Keys.ENTER);
 
-            // Počkej na výsledek a klikni na něj
-            WebElement result = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.xpath("//a[contains(., '" + movie + "')]")
+            List<WebElement> results = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                    By.xpath("//section[@data-testid='find-results-section-title']//a[contains(@href, '/title/')]")
             ));
-            Assertions.assertTrue(result.isDisplayed(), "Result not found for: " + movie);
-            result.click();
 
-            // Ověř, že stránka obsahuje jméno
+            boolean found = false;
+            for (WebElement result : results) {
+                if (result.getText().toLowerCase().contains(movie.toLowerCase())) {
+                    Assertions.assertTrue(result.isDisplayed(), "Result not found for: " + movie);
+                    result.click();
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                throw new RuntimeException("No suitable movie result found for: " + movie);
+            }
+
             wait.until(ExpectedConditions.titleContains(movie));
             Assertions.assertTrue(driver.getPageSource().contains(movie), "Name not found on page: " + movie);
 
-            // Po kliknutí na herce můžeme zavolat pomocné metody (nebo přidat další kroky v Gherkinu)
             clickTrailerLink();
-
-            // Po skončení se vrať zpět na homepage pro další jméno
             driver.get("https://www.imdb.com/");
         }
     }
+
 
 
     public void clickTrailerLink() {

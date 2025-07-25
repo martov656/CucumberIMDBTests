@@ -9,9 +9,9 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("Features")
-@ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME,value = "UiTests/Steps")
-@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME,value = "@regression")
+@SelectClasspathResource("Features/IMDB")
+@ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME,value = "UiTests.Steps.IMDB")
+@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME,value = "@multiple")
 @ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME,value = "false")
 @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/cucumber.html")
 public class TestRunner {
