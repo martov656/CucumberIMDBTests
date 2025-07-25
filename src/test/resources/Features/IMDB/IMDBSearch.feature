@@ -38,6 +38,8 @@ Feature: IMDb celebrity search with multiple movies
       |Jarmark marnosti|
       |Sedmilhářky|
       |Sami v pousti|
+      |You're Cordially Invited|
+
 
     Then imdb browser is closed
 
