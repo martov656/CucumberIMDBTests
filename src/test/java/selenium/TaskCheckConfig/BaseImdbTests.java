@@ -624,10 +624,7 @@ public class BaseImdbTests extends BasedSharedMethods  {
         }
 
 
-        // Skryj GDPR dialog
-        ((JavascriptExecutor) driver).executeScript(
-                "let dialog = document.querySelector('div[role=dialog]'); if (dialog) dialog.remove();"
-        );
+
 
         // Vyhledání herečky
         WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(By.name("q")));

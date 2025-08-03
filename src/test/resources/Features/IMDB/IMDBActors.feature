@@ -36,6 +36,7 @@ Feature: IMDb celebrity search
   Scenario: User searches for multiple celebrities on IMDb
     Given the user opens the IMDb homepage
     When the user searches for the following celebrities:
+      | Eva Longoria       |
       | Reese Witherspoon  |
       | Sandra Bullock     |
       | Scarlett Johansson |

@@ -20,6 +20,8 @@ Feature: IMDb celebrity search with multiple movies
       |Airport 1975|
       |Osvícení|
       |Rocky|
+      |Critters|
+
 
     Then imdb browser is closed
 
