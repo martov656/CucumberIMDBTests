@@ -5,8 +5,7 @@ Feature: IMDb celebrity search with multiple movies
   Scenario: User searches for multiple movies on IMDb
     Given user opens movie database home page
     When user is searching for the following movies:
-      | Dr. No          |
-      | Goldfinger          |
+      | Moonraker         |
       | Vetřelec          |
       | Vetřelci          |
       | Gravitace          |
